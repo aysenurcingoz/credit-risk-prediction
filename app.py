@@ -37,7 +37,9 @@ st.markdown(
         .hero, .hero h1, .hero p {
         color: white !important;
     }
-
+        section[data-testid="stSidebar"] {
+        background-color: #ffffff !important;
+  }
         section[data-testid="stSidebar"] * {
         color: #0f172a !important;
     }
