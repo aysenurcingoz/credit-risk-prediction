@@ -1,3 +1,7 @@
+## 🌐 Live Demo
+
+🔗 [Open Streamlit App](https://credit-risk-prediction-aysenur.streamlit.app/)
+
 # 🏦 Credit Risk Prediction Using Machine Learning
 
 ## 📖 Project Overview
