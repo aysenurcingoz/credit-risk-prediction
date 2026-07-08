@@ -30,7 +30,17 @@ st.markdown(
     .stApp {
         background-color: #f4f7fb;
     }
+    .stApp, .stMarkdown, p, span, div, label {
+        color: #0f172a;
+    }
 
+        .hero, .hero h1, .hero p {
+        color: white !important;
+    }
+
+        section[data-testid="stSidebar"] * {
+        color: #0f172a !important;
+    }
     .hero {
         background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
         padding: 32px;
