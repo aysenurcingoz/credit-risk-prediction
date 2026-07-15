@@ -25,85 +25,291 @@ st.set_page_config(
 
 st.markdown("""
 <style>
-.stApp {
-    background-color: #F4F7FB;
-    color: #0F172A;
-}
 
-section[data-testid="stSidebar"] {
-    background-color: #E8F1FA;
-}
+/* =========================
+   GENEL SAYFA
+========================= */
 
-section[data-testid="stSidebar"] * {
+html,
+body,
+[data-testid="stAppViewContainer"],
+[data-testid="stApp"] {
+    background-color: #F4F7FB !important;
     color: #0F172A !important;
 }
 
+[data-testid="stMain"],
+[data-testid="stMainBlockContainer"] {
+    background-color: #F4F7FB !important;
+}
+
+/* Genel metinler */
+[data-testid="stAppViewContainer"] p,
+[data-testid="stAppViewContainer"] span,
+[data-testid="stAppViewContainer"] label,
+[data-testid="stAppViewContainer"] li,
+[data-testid="stAppViewContainer"] h1,
+[data-testid="stAppViewContainer"] h2,
+[data-testid="stAppViewContainer"] h3,
+[data-testid="stAppViewContainer"] h4,
+[data-testid="stAppViewContainer"] h5,
+[data-testid="stAppViewContainer"] h6 {
+    color: #0F172A;
+}
+
+/* Markdown metinleri */
+[data-testid="stMarkdownContainer"] {
+    color: #0F172A !important;
+}
+
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] li {
+    color: #0F172A !important;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
+
+section[data-testid="stSidebar"] {
+    background-color: #E8F1FA !important;
+}
+
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] span:not([data-baseweb="tag"]),
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] h4 {
+    color: #0F172A !important;
+}
+
+
+/* =========================
+   INPUT ALANLARI
+========================= */
+
+input,
+textarea {
+    color: #0F172A !important;
+    background-color: #FFFFFF !important;
+    -webkit-text-fill-color: #0F172A !important;
+}
+
+/* Number input */
+[data-testid="stNumberInput"] input {
+    color: #0F172A !important;
+    background-color: #FFFFFF !important;
+    -webkit-text-fill-color: #0F172A !important;
+}
+
+/* Text input */
+[data-testid="stTextInput"] input {
+    color: #0F172A !important;
+    background-color: #FFFFFF !important;
+    -webkit-text-fill-color: #0F172A !important;
+}
+
+/* Selectbox ve multiselect */
+div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+div[data-baseweb="select"] span,
+div[data-baseweb="select"] input {
+    color: #0F172A !important;
+    -webkit-text-fill-color: #0F172A !important;
+}
+
+/* Açılan selectbox menüsü */
+ul[role="listbox"],
+li[role="option"] {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+/* Slider etiketleri */
+[data-testid="stSlider"] {
+    color: #0F172A !important;
+}
+
+
+/* =========================
+   METRIC VE BİLGİ KUTULARI
+========================= */
+
+[data-testid="stMetric"] {
+    background-color: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 14px;
+    padding: 14px;
+}
+
+[data-testid="stMetricLabel"],
+[data-testid="stMetricValue"],
+[data-testid="stMetricDelta"] {
+    color: #0F172A !important;
+}
+
+/* Alert kutuları */
+[data-testid="stAlert"] p,
+[data-testid="stAlert"] span {
+    color: inherit !important;
+}
+
+
+/* =========================
+   HERO ALANI
+========================= */
+
 .hero {
-    background: linear-gradient(135deg, #0F172A, #1E3A8A, #2563EB);
+    background: linear-gradient(
+        135deg,
+        #0F172A,
+        #1E3A8A,
+        #2563EB
+    );
     padding: 32px;
     border-radius: 22px;
     margin-bottom: 25px;
-    box-shadow: 0px 8px 24px rgba(15, 23, 42, 0.22);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.22);
 }
 
 .hero h1 {
-    color: white !important;
+    color: #FFFFFF !important;
     font-size: 38px;
-    font-weight: 850;
-    margin-bottom: 10px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin: 0 0 10px 0;
 }
 
 .hero p {
     color: #DBEAFE !important;
     font-size: 17px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+
+/* =========================
+   SONUÇ KUTULARI
+========================= */
+
+.result-low,
+.result-medium,
+.result-high {
+    padding: 24px;
+    border-radius: 18px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.result-low,
+.result-low * {
+    background-color: #DCFCE7;
+    color: #166534 !important;
 }
 
 .result-low {
-    background-color: #DCFCE7;
-    color: #166534 !important;
-    padding: 24px;
-    border-radius: 18px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 800;
     border: 1px solid #86EFAC;
 }
 
-.result-medium {
+.result-medium,
+.result-medium * {
     background-color: #FEF3C7;
     color: #92400E !important;
-    padding: 24px;
-    border-radius: 18px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 800;
+}
+
+.result-medium {
     border: 1px solid #FACC15;
 }
 
-.result-high {
+.result-high,
+.result-high * {
     background-color: #FEE2E2;
     color: #991B1B !important;
-    padding: 24px;
-    border-radius: 18px;
-    text-align: center;
-    font-size: 24px;
-    font-weight: 800;
+}
+
+.result-high {
     border: 1px solid #FCA5A5;
 }
 
-.stButton > button {
-    background-color: #2563EB;
-    color: white !important;
+
+/* =========================
+   BUTONLAR
+========================= */
+
+.stButton > button,
+[data-testid="stFormSubmitButton"] > button {
+    background-color: #2563EB !important;
+    color: #FFFFFF !important;
     border-radius: 12px;
     border: none;
     font-weight: 700;
     padding: 0.7rem 1rem;
 }
 
-.stButton > button:hover {
-    background-color: #1D4ED8;
-    color: white !important;
+.stButton > button *,
+[data-testid="stFormSubmitButton"] > button * {
+    color: #FFFFFF !important;
 }
+
+.stButton > button:hover,
+[data-testid="stFormSubmitButton"] > button:hover {
+    background-color: #1D4ED8 !important;
+    color: #FFFFFF !important;
+    border: none;
+}
+
+.stButton > button:focus,
+[data-testid="stFormSubmitButton"] > button:focus {
+    color: #FFFFFF !important;
+    border: none;
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+
+/* =========================
+   TABLOLAR
+========================= */
+
+[data-testid="stDataFrame"],
+[data-testid="stTable"] {
+    background-color: #FFFFFF !important;
+    color: #0F172A !important;
+}
+
+
+/* =========================
+   MOBİL UYUM
+========================= */
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 22px;
+        border-radius: 16px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .result-low,
+    .result-medium,
+    .result-high {
+        font-size: 20px;
+        padding: 18px;
+    }
+}
+
 </style>
 """, unsafe_allow_html=True)
 
